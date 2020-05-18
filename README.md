@@ -8,3 +8,4 @@
 6. npm install n
 7. clone this repo into your ~ location
 8. rm -rf .git
+9. remove some of the mac/laptop specifics like the camera
