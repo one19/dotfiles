@@ -1,0 +1,19 @@
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[user]
+	email = maelstroswim@gmail.com
+	name = Drew Showalter
+[core]
+	editor = vim
+	excludesfile = /Users/one19/.gitignore_global
+[credential]
+	helper = osxkeychain
+[init]
+	templatedir = ~/.git_template
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[rerere]
+	enabled = true
