@@ -1,0 +1,80 @@
+{
+  "editor.detectIndentation": false,
+  "editor.fontSize": 11,
+  "editor.fontLigatures": true,
+  "editor.letterSpacing": -0.15,
+  "editor.fontFamily": "Fira Code, DyslexieCode",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.renderWhitespace": "all",
+  "editor.snippetSuggestions": "top",
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.openEditors.visible": 0,
+  "extensions.ignoreRecommendations": true,
+  "files.autoSave": "onFocusChange",
+  "window.zoomLevel": 1,
+  "workbench.iconTheme": "material-icon-theme",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "cSpell.userWords": [
+    "brightsole",
+    "buildkite",
+    "compono",
+    "gmail",
+    "kubernetes",
+    "maelstroswim",
+    "monospaced",
+    "organisation",
+    "organisations",
+    "repo",
+    "shortlyster",
+    "showalter"
+  ],
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "powermode.enabled": true,
+  "powermode.enableShake": false,
+  "powermode.explosionSize": 8,
+  "powermode.comboThreshold": 20,
+  "workbench.colorTheme": "Horizon Bold",
+  "javascript.validate.enable": false,
+  "editor.formatOnSave": false,
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "eslint.validate": [
+    "javascript",
+    {
+      "autoFix": true,
+      "language": "typescript"
+    },
+    "javascriptreact",
+    {
+      "autoFix": true,
+      "language": "typescriptreact"
+    }
+  ],
+  "liveshare.anonymousGuestApproval": "accept",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "explorer.confirmDelete": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
