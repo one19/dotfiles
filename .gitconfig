@@ -1,8 +1,8 @@
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [user]
-	email = maelstroswim@gmail.com
-	name = Drew Showalter
+	email = 10665739+one19@users.noreply.github.com
+	name = 119
 [core]
 	editor = vim
 	excludesfile = /Users/one19/.gitignore_global
@@ -10,6 +10,7 @@
 	helper = osxkeychain
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = main
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -17,3 +18,9 @@
 	required = true
 [rerere]
 	enabled = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
