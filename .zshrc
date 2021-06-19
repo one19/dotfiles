@@ -7,6 +7,7 @@
 # Source Prezto if it exists
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+  source ~/powerlevel10k/powerlevel10k.zsh-theme
   setopt clobber;
   # (cd ~/.zprezto && git fetch && git stash && git rebase origin/master && git submodule update --init --recursive && cat ~/.zshrcbackup > ~/.zshrc)
 fi
