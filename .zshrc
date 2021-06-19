@@ -15,7 +15,7 @@ fi
 
 # STARTUP COMMANDS
 # eval "$(rbenv init -)"
-brew update
+command -v brew && brew update
 echo "----------Be happy.----------" | lolcatjs
 
 
@@ -53,6 +53,7 @@ export PATH="$PATH:$HOME"
 export ADBBLOCK=true
 export NPM_CONFIG_FUND=false
 export DISABLE_OPENCOLLECTIVE=true
+export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 # export RUBYOPT='-W:no-deprecated'
 
 zstyle ':prezto:load' pmodule \
@@ -75,4 +76,4 @@ zstyle ':prezto:load' pmodule \
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 autoload -Uz promptinit
 promptinit
-prompt powerlevel10k
+prompt powerlevel10k > /dev/null 2>&1
