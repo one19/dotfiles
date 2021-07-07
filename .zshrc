@@ -25,10 +25,7 @@ alias visc='open -a "Visual Studio Code"'
 alias atom='open -a "Atom"'
 
 ## CUSTOM GIT COMMANDS
-alias grom='git rebase origin/main'
-alias greom='git reset --hard origin/main'
-alias grunt='gf && git checkout development && git reset --hard origin/development'
-alias wip='git add . && git commit -m wip --no-verify'
+source ./.git-aliases.sh
 
 ## FUN
 alias cow='fortune | cowsay | lolcatjs'
@@ -65,7 +62,6 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'git' \
   'history-substring-search' \
   'prompt'
 
