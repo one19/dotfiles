@@ -1,4 +1,4 @@
 #!/bin/sh
 ### lolcommits hook (begin) ###
-LANG="en_US.UTF-8" && PATH="$PATH:/Users/one19/.rbenv/versions/2.6.5/bin:/usr/local/bin" && if [ ! -d "$GIT_DIR/rebase-merge" ] && [ "$LOLCOMMITS_CAPTURE_DISABLED" != "true" ]; then lolcommits -c -a 3 --device "$CAMERA" --fork --stealth ; fi
+LANG="en_US.UTF-8" && PATH="$PATH:/Users/one19/.rbenv/versions/2.6.5/bin:/usr/local/bin" && if [ ! -d "$GIT_DIR/rebase-merge" ] && [ "$LOLCOMMITS_CAPTURE_DISABLED" != "true" ]; then lolcommits -w 3 -c --fork --stealth ; fi
 ###  lolcommits hook (end)  ###
