@@ -2,7 +2,7 @@
 
 1. eval "$(ssh-agent -s)"
 1. open or `touch ~/.ssh/config`
-1. add identity file and ssh key [from this setup thing.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) // passphrase seems fine
+1. add identity file and ssh key [from this setup thing.](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent) // passphrase overkill. every push & pull enter a password? Nah fam.
 1. download and install node // node allows you to install via n these days
 <!-- 1. `sudo chown myusername` the `/usr/local/*` folders -->
 <!-- you only need to do this if installing n at root. Seems unnecessary -->
