@@ -1,4 +1,3 @@
-
 # VARIOUS
 alias gs="git status"
 
@@ -7,14 +6,12 @@ alias gdc="git diff --cached"
 
 alias gl="git lg"
 
-alias gpos="git pull origin staging"
-
 alias gf="git fetch"
 
 alias gb="git branch"
 
 alias gp="git push"
-alias gpuo="git push -u origin"
+alias gpu='git push -u origin $(git rev-parse --abbrev-ref HEAD)'
 
 alias gc="git clone"
 
@@ -34,7 +31,8 @@ alias gcob="git checkout -b"
 
 # REBASE
 alias gr="git rebase"
-alias grm="git rebase origin/main 2>/dev/null || git rebase origin/master"
+alias grm="git rebase origin/main"
+alias greom="git reset --hard origin/main"
 alias grc="git rebase --continue"
 alias grs="git rebase --skip"
 

@@ -1,75 +1,50 @@
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-
-# SOURCE NPM TOKENS IF THEY EXIST
-# [ -f ~/.npm_tokens ] && source ~/.npm_tokens
-
-# Source Prezto if it exists
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-  source ~/powerlevel10k/powerlevel10k.zsh-theme
-  setopt clobber;
-  # (cd ~/.zprezto && git fetch && git stash && git rebase origin/master && git submodule update --init --recursive && cat ~/.zshrcbackup > ~/.zshrc)
+# NEVER REMOVE. START THE SSH AGENT SO OUR KEYS ARE HOT GRABBABLE
+if [ -z "$SSH_AGENT_PID" ]; then
+    eval "$(ssh-agent -s)" > /dev/null 2>&1
 fi
 
-
-# STARTUP COMMANDS
-# eval "$(rbenv init -)"
-command -v brew && brew update
-echo "----------Be happy.----------" | lolcatjs
-
-
-## EDITORS
-alias subl='open -a "Sublime Text"'
-alias visc='open -a "Visual Studio Code"'
-alias atom='open -a "Atom"'
-
-## CUSTOM GIT COMMANDS
-source ./.git-aliases.sh
-
-## FUN
-alias cow='fortune | cowsay | lolcatjs'
-alias dragon='fortune | cowsay -f dragon | lolcatjs'
-
-## PLANNING
-alias today='today -c'
-alias tomorrow='today -cn'
-
+# brew install cowsay fortune thefuck zsh-autosuggestions zsh-syntax-highlighting
+# npm i -g lolcatjs
 
 # # PATH MODIFICATION
 export PATH="$PATH:$HOME"
-# export PATH="$HOME/.yarn/bin:$PATH"
-# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export ZSH="$HOME/.oh-my-zsh"
+export PATH="/opt/homebrew/bin:$PATH"
 
-# # UNBLOCK ON MAC TO DEVELOP IN GO
-# export GOROOT="/usr/local/go"
-# export PATH="$PATH:$GOROOT/bin"
-# export GOPATH="/Users/one19/Fundamentals/go"
+# STARTUP COMMANDS
+echo "checking brew updates"
+brew outdated --quiet || {
+  echo "brew updating"
+  brew update
+}
+echo "----------Be happy.----------" | lolcatjs
+
+## EDITORS
+alias visc='open -a "Visual Studio Code"'
+
+## FUN
+alias dragon='fortune | cowsay -f dragon | lolcatjs'
+alias cow='fortune | cowsay | lolcatjs'
+alias fuck='thefuck'
 
 # # PLEASE MAKE IT STOP AAA
 export ADBBLOCK=true
 export NPM_CONFIG_FUND=false
 export DISABLE_OPENCOLLECTIVE=true
-export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
-# export RUBYOPT='-W:no-deprecated'
 
-zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'history-substring-search' \
-  'prompt'
+### OH-MY-ZSH SHIT (yes, we went back)
+ZSH_THEME="agnoster"
+zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' frequency 13
+plugins=(git history jsontools web-search)
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZSH/oh-my-zsh.sh
+prompt_context() {
+	prompt_segment "$AGNOSTER_CONTEXT_BG" "$AGNOSTER_CONTEXT_FG" "%(!.%{%F{$AGNOSTER_STATUS_ROOT_FG}%}.)%n"
+}
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[ -f ~/.p10k.zsh ] && source ~/.p10k.zsh
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-autoload -Uz promptinit
-promptinit
-prompt powerlevel10k > /dev/null 2>&1
+## CUSTOM GIT COMMANDS
+# sourced last to obliterate shitty oh-my-zsh git aliases
+source ~/.git-aliases.sh
